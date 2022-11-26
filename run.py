@@ -6,11 +6,14 @@ from universals.environment import Environment
 
 img_path = "./images/"
 
-shutil.rmtree(img_path)
+try:
+    shutil.rmtree(img_path)
+except:
+    pass
 os.mkdir(img_path)
 
 fps = 60
-duration = 60
+duration = 300
 
 env = Environment(dt=1/fps, mv=1, mrr=3, n=10, G=0.5)
 env.generate_particles()

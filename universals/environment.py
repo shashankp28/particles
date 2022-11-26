@@ -27,7 +27,7 @@ class Environment:
             mass = radius*self.M_by_rr
             temp_coor = np.array([x, y]) + np.array([self.D_max/2, self.D_max/2])
             temp_vel = np.random.uniform(-1, 1, (2,))*self.max_vel
-            particle = Particle(temp_coor, temp_vel*0, radius, mass)
+            particle = Particle(temp_coor, temp_vel, radius, mass)
             self.particles.append(particle)
 
     def show_environment(self, i):
