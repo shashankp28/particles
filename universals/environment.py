@@ -1,6 +1,8 @@
 import numpy as np
 import packcircles as pc
 from services.utils import *
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from universals.particle import Particle
 
@@ -39,8 +41,8 @@ class Environment:
             energy += 0.5 * p.mass * np.dot(p.velocity, p.velocity)
             circle = plt.Circle(p.coordinate, p.radius, color=p.color)
             ax.add_patch(circle)
-        ax.set_title(f'Kinetic Energy: {np.round(energy, 3)} & Momentum: {np.round(momentum, 3)}')
-        fig.savefig(f"./images/{i}.jpg")
+        ax.set_title('Kinetic Energy: {} & Momentum: {}'.format(np.round(energy, 3), np.round(momentum, 3)))
+        fig.savefig("./images/{}.jpg".format(i))
         plt.close(fig)
     
     def fix_border(self, particle):

@@ -10,9 +10,9 @@ shutil.rmtree(img_path)
 os.mkdir(img_path)
 
 fps = 60
-duration = 300
+duration = 60
 
-env = Environment(dt=1/fps, mv=0, mrr=3, n=20, G=1)
+env = Environment(dt=1/fps, mv=1, mrr=3, n=10, G=0.5)
 env.generate_particles()
 i = 0
 print("Running Simulation...")
