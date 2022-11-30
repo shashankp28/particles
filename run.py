@@ -7,8 +7,10 @@ from universals.environment import Environment
 
 img_path = "./images/"
 
-
-shutil.rmtree(img_path)
+try:
+    shutil.rmtree(img_path)
+except:
+    pass
 os.mkdir(img_path)
 
 fps = 60
