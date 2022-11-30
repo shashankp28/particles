@@ -5,13 +5,12 @@ def is_close(a, b, eps):
     b = np.array(b)
     return np.linalg.norm(a-b)<=eps
 
-def get_boundary(circles):
-    fuzz = 5
+def get_boundary(circles, fuzz):
     d_max = -float('inf')
     max_radius = d_max
     particle_coors = []
     for (x, y, radius) in circles: 
-        d_max = max([d_max, abs(x)*fuzz+radius, abs(y)*fuzz+radius])
+        d_max = max([d_max, abs(x)+radius, abs(y)+radius])
         max_radius = max(max_radius, radius)
         particle_coors.append((x*fuzz, y*fuzz, radius))
     return d_max, max_radius, particle_coors
