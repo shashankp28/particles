@@ -14,7 +14,7 @@ except:
 os.mkdir(img_path)
 
 fps = 60
-duration = 60
+duration = 180
 
 env = Environment(dt=1/fps, mv=2, m_a=0.5, n=20, G=1, sc=5, sp=6)
 env.generate_particles()
